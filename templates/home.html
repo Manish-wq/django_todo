@@ -1,0 +1,109 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container pt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="mb-0">Employee List</h1>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add
+                Employee</button>
+        </div>
+        <!-- Add Employee Modal -->
+        <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="post" enctype="multipart/form-data" action="{% url 'add_employee' %}">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="employeeName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="employeeName" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeeEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="employeeEmail" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeePhone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="employeePhone" name="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeePosition" class="form-label">Position</label>
+                                <input type="text" class="form-control" id="employeePosition" name="position" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeeDepartment" class="form-label">Department</label>
+                                <input type="text" class="form-control" id="employeeDepartment" name="department"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeePhoto" class="form-label">Photo</label>
+                                <input type="file" class="form-control" id="employeePhoto" name="photo"
+                                    accept="image/*">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save Employee</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table container">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <!-- <th scope="col">Position</th> -->
+                <th scope="col">Department</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <th>{{ forloop.counter }}</th>
+                <td><a href="{% url 'about' employee.id %}">{{employee.name}}</a></td>
+                <!-- <td>{{employee.position}}</td> -->
+                <td>{{employee.department}}</td>
+                <td>{{employee.email}}</td>
+                <td>
+                    <a href="{% url 'edit_employee' employee.id %}" class="btn btn-sm btn-warning">Edit</a>
+                    <form method="post" action="{% url 'delete_employee' employee.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Are you sure you want to delete this employee?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <!-- {{employees}} -->
+    <img src="{% static 'images/linux.png' %}" alt="" width="500" height="200">
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+*.db
+media/
+staticfiles/
+
+# VS Code
+.vscode/
+
+# Virtual Environment
+env/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/__pycache__/
+
+# Pillow cache
+*.thumb
+
+# Others
+*.bak
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup
+*.bak
+
+# IDE
+.idea/
+*.iml
+
+# Windows
+*.exe
+*.dll
+*.obj
+*.o
+*.lib
+*.pdb
+*.idb
+*.class
+
+# Git
+.git/
