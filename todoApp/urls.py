@@ -28,8 +28,9 @@ urlpatterns = [
     path('get-todo/', views.get_todo, name='get_todo'),
     path('add-todo/', views.add_todo, name='add_todo'),
     path('mark-as-done/<int:pk>/', views.mark_as_done, name='mark_as_done'),
+    path('mark-as-undone/<int:pk>/', views.mark_as_undone, name='mark_as_undone'),
     path('update-todo/<int:pk>/', views.update_todo, name='update_todo'),
-    # path('delete-todo/<int:pk>/', views.delete_todo, name='delete_todo'),
+    path('delete-todo/<int:pk>/', views.delete_todo, name='delete_todo'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

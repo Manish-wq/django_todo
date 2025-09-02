@@ -1,5 +1,5 @@
 from  django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from employee.models import Employee, Todo
 
 
@@ -33,7 +33,14 @@ def add_todo(request):
 
 def mark_as_done(request, pk):
     todo = Todo.objects.get(pk=pk)
+    # todo = get_object_or_404(Todo, pk=pk)
     todo.is_completed = True
+    todo.save()
+    return redirect('get_todo')
+
+def mark_as_undone(request, pk):
+    todo = Todo.objects.get(pk=pk)
+    todo.is_completed = False
     todo.save()
     return redirect('get_todo')
 
@@ -46,3 +53,8 @@ def update_todo(request, pk):
         return redirect('get_todo')  
     context = {'todo': todo}
     return render(request, 'update_todo.html', context)
+
+def delete_todo(request, pk):
+    todo = Todo.objects.get(pk=pk)
+    todo.delete()
+    return redirect('get_todo')
