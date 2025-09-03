@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+    <header style="text-align: center; flex: 1; font-size: large;">
+        <h1>{{ name }}</h1>
+        <p>{{ tagline }}</p>
+    </header>
+    <div style="text-align: right; min-width: 250px;">
+        <div style="margin-bottom: 0.5rem;">
+            <a href="https://github.com/Manish-wq" target="_blank" style="text-decoration: none; color: inherit;">
+                <i class="fa fa-github" style="margin-right: 8px;"></i>GitHub
+            </a>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+            <i class="fa fa-envelope" style="margin-right: 8px;"></i>
+            <a href="mailto:manishsingh20250@gamil.com"
+                style="text-decoration: none; color: inherit;">manishsingh20250@gamil.com</a>
+        </div>
+        <div>
+            <i class="fa fa-map-marker" style="margin-right: 8px;"></i>Noida, Uttar Pradesh
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate full-stack developer with experience in building web applications from the ground up.
+        I specialize in Python and Django for the backend, and I am proficient with modern frontend technologies like
+        JavaScript and React.
+        (You can replace this with a summary from your resume PDF).
+    </p>
+</section>
+
+<section id="experience" style="margin-top: 2rem; width: 50%; float: left; clear: left;">
+    <h2>Experience</h2>
+    <div class="timeline-container" style="position: relative; margin-left: 30px; padding-bottom: 20px;">
+        <!-- Vertical glassmorphism line (left-aligned) -->
+        <div
+            style="position: absolute; left: 0px; top: 0; bottom: 0; width: 8px; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); border-radius: 8px; box-shadow: 0 4px 24px 0 rgba(31,38,135,0.25);">
+        </div>
+
+        <!-- Experience 2 -->
+        <div style="position: relative; margin-bottom: 60px; min-height: 80px;">
+            <div
+                style="position: absolute; left: 4px; top: 6px; width: 25px; height: 25px; background: rgba(255,255,255,0.25); border-radius: 50%; z-index: 2; box-shadow: 0 2px 12px 0 rgba(31,38,135,0.18); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transform: translateX(-50%);">
+            </div>
+            <div style="margin-left: 40px;">
+                <div class="experience-label" style="font-weight: bold; font-style: italic; font-size: 25px; margin-bottom: 0.5rem;">Fullstack Developer</div>
+                <div class="experience-details">
+                    <p style="margin-bottom: 0.2rem;"><strong>Company:</strong> Team Of Keys Pvt Ltd</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Duration:</strong> April 2025 - August 2025</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Location:</strong> Noida, Sector 2</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Description:</strong> Worked as a frontend developer,
+                        focusing on React-based projects, collaborating with cross-functional teams, and delivering
+                        high-quality web applications under tight deadlines.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience 1 -->
+        <div style="position: relative; margin-bottom: 60px; min-height: 80px;">
+            <div
+                style="position: absolute; left: 4px; top: 6px; width: 25px; height: 25px; background: rgba(255,255,255,0.25); border-radius: 50%; z-index: 2; box-shadow: 0 2px 12px 0 rgba(31,38,135,0.18); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transform: translateX(-50%);">
+            </div>
+            <div style="margin-left: 40px;">
+                <div class="experience-label" style="font-weight: bold; font-size: 25px; margin-bottom: 0.5rem;">Frontend Developer</div>
+                <div class="experience-details">
+                    <p style="margin-bottom: 0.2rem;"><strong>Company:</strong> Smalsus Infolabs Pvt Ltd</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Duration:</strong> April 2024 - March 2025</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Location:</strong> Noida, Sector 63</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Description:</strong> Worked as a frontend developer
+                        (React). Responsible for debugging and maintaining legacy React-heavy projects, improving UI/UX,
+                        and collaborating with backend teams for seamless integration.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Training 4 -->
+        <div style="position: relative; margin-bottom: 60px; min-height: 80px;">
+            <div
+                style="position: absolute; left: 4px; top: 6px; width: 25px; height: 25px; background: rgba(255,255,255,0.25); border-radius: 50%; z-index: 2; box-shadow: 0 2px 12px 0 rgba(31,38,135,0.18); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transform: translateX(-50%);">
+            </div>
+            <div style="margin-left: 40px;">
+                <div class="experience-label" style="font-weight: bold; font-size: 25px; margin-bottom: 0.5rem;">Python Training</div>
+                <div class="experience-details">
+                    <p style="margin-bottom: 0.2rem;"><strong>Company:</strong> Team Of Keys Pvt Ltd</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Duration:</strong> April 2025 - August 2025</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Location:</strong> Noida, Sector 2</p>
+                    <p style="margin-bottom: 0.2rem;"><strong>Description:</strong> Worked as a frontend developer,
+                        focusing on React-based projects, collaborating with cross-functional teams, and delivering
+                        high-quality web applications under tight deadlines.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Education 4 -->
+        <div style="position: relative; margin-bottom: 60px; min-height: 80px;">
+            <div
+                style="position: absolute; left: 4px; top: 6px; width: 25px; height: 25px; background: rgba(255,255,255,0.25); border-radius: 50%; z-index: 2; box-shadow: 0 2px 12px 0 rgba(31,38,135,0.18); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transform: translateX(-50%);">
+            </div>
+            <div style="margin-left: 40px;">
+                <div class="experience-label" style="font-weight: bold; font-size: 25px; margin-bottom: 0.5rem;">Education (Higher)</div>
+                <div class="experience-details">
+                    <p style="margin-bottom: 0.1rem;"><strong>College</strong> Royal Educational Institute</p>
+                    <p style="margin-bottom: 0.1rem;"><strong>Duration:</strong> 2020 - 2023</p>
+                    <p style="margin-bottom: 0.1rem;"><strong>Location:</strong> Dasana, Ghaziabad</p>
+                    <p style="margin-bottom: 0.1rem;"><strong>Description:</strong> Bachelor's Of Computer Application (BCA)</p>
+                </div>
+                <hr style="margin-top: 14px;">
+                <div class="experience-details ">
+                    <p><strong>Sr. Secondary School:</strong> Bal Jyoti Sr.Sec. School</p>
+                    <p><strong>Duration:</strong> 2018 - 2020</p>
+                    <p><strong>Location:</strong> Ghaziabad, Uttar Pradesh</p>                
+                </div>
+                <hr style="margin-top: 14px;">
+                <div class="experience-details ">
+                    <p><strong>Secondary School:</strong> Holy Angel's Public School</p>
+                    <p><strong>Duration:</strong> 2016 - 2018</p>
+                    <p><strong>Location:</strong> Ghaziabad, Uttar Pradesh</p>                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" style="margin-top: 3rem;">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+            {% if project.image %}
+            <img src="{{ project.image.url }}" alt="{{ project.title }} screenshot" class="project-image">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="project-tech">
+                <strong>Technologies:</strong> {{ project.technologies }}
+            </div>
+            <div class="project-links">
+                {% if project.project_url %}
+                <a href="{{ project.project_url }}" target="_blank">Live Demo</a>
+                {% endif %}
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank">GitHub</a>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p>Projects will be added soon!</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="skills" style="margin-top: 2rem; width: 50%; float: left;">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Django</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">HTML5 &amp; CSS3</span>
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">MongoDB</span>
+        <span class="skill-badge">REST APIs</span>
+        <span class="skill-badge">Git</span>
+        <span class="skill-badge">Docker</span>
+        <span class="skill-badge">AWS</span>
+    </div>
+</section>
+{% endblock %}
