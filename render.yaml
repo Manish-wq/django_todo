@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: todoApp
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn todoApp.wsgi:application --bind 0.0.0.0:$PORT"
+
+    # If you use a database, add a database block below
+    # databases:
+    #   - name: todo-db
+    #     plan: free
+    #     region: oregon
