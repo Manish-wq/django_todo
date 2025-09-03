@@ -4,6 +4,8 @@ services:
     buildCommand: "pip install -r requirements.txt"
     runtime: python
     startCommand: "gunicorn todoApp.wsgi:application --bind 0.0.0.0:$PORT"
+    releaseCommand: "python manage.py migrate"
+
     envVars:
       - key: DATABASE_URL
         fromDatabase:
