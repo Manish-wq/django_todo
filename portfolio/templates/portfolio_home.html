@@ -2,6 +2,31 @@
 
 
 {% block content %}
+    <style>
+    @media (max-width: 768px) {
+        .skills-container, .timeline-container {
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+        .timeline-container > div {
+            margin-left: 0 !important;
+        }
+        .timeline-container {
+            padding-left: 0 !important;
+        }
+        .projects-grid {
+            grid-template-columns: 1fr !important;
+        }
+        section#skills, section#experience {
+            width: 100% !important;
+            float: none !important;
+            clear: both !important;
+        }
+        .glass-card {
+            padding: 10px !important;
+        }
+    }
+    </style>
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
     <header style="text-align: center; flex: 1; font-size: large;">
         <h1>{{ name }}</h1>
