@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -103,18 +105,6 @@ else:
         }
 
 
-# If Render provides DATABASE_URL, use Postgres instead
-# DATABASE_URL = os.getenv("DATABASE_URL")
-# if DATABASE_URL:
-#     DATABASES["default"] = dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
-
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgresql://postgres:postgres@localhost:5432/mysite',
-#         conn_max_age=600
-#     )
-# }
-
 print(">>> DATABASE_URL from environment:", os.environ.get("DATABASE_URL"))
 print(">>> DATABASES config:", DATABASES)
 
@@ -163,6 +153,12 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Media files (Uploaded by users)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+#Media files (Uploaded by users)
+if ENVIRONMENT == "development":
+    MEDIA_ROOT = BASE_DIR / 'media'
+else:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    CLOUDINARY_STORAGE = {
+        'CLOUDINARY_URL' : env("CLOUDINARY_URL")
+    }
