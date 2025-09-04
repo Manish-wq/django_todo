@@ -12,8 +12,10 @@ __pycache__/
 *.pyc
 *.sqlite3
 *.db
-media/
-staticfiles/
+employee/
+templates/
+todoApp/static/
+media/employee_photos/
 
 # VS Code
 .vscode/
