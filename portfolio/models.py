@@ -1,3 +1,4 @@
+from time import timezone
 from django.db import models
 
 class Project(models.Model):
@@ -8,6 +9,8 @@ class Project(models.Model):
     project_url = models.URLField("Project URL", blank=True, null=True, help_text="Optional: The URL where the project is live.")
     github_url = models.URLField("GitHub URL", blank=True, null=True, help_text="Optional: The URL to the source code on GitHub.")
     display_order = models.PositiveIntegerField(default=0, help_text="Projects with lower numbers are displayed first.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         # This ensures projects are always ordered correctly when you fetch them.
