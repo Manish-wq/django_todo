@@ -38,8 +38,8 @@ if ENVIRONMENT == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','*']
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','aboutme-9oug.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://aboutme-9oug.onrender.com']
 
 
 # Application definition
